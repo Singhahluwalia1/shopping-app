@@ -28,6 +28,42 @@ const lessons = [
     location: "Bristol",
     price: 90,
     spaces: 5
+  },
+  {
+    subject: "Science",
+    location: "London",
+    price: 100,
+    spaces: 5
+  },
+  {
+    subject: "Science",
+    location: "Oxford",
+    price: 100,
+    spaces: 5
+  },
+  {
+    subject: "English",
+    location: "London",
+    price: 100,
+    spaces: 5
+  },
+  {
+    subject: "Science",
+    location: "London",
+    price: 100,
+    spaces: 5
+  },
+  {
+    subject: "Science",
+    location: "Oxford",
+    price: 100,
+    spaces: 5
+  },
+  {
+    subject: "English",
+    location: "London",
+    price: 100,
+    spaces: 5
   }
 ];
 
