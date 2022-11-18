@@ -125,12 +125,62 @@ import "./assets/fontawesome.css";
 
 export default {
     name: "App",
-    
-    
+    data() {
+        return {
+            msg: "Hellow",
+            lessons: lessons,
+            slessons: [],
+            sortby: "price",
+            orderby: "asc",
+        };
+    },
+    methods: {
+        add(id) {
+            if (this.lessons[id].spaces > 1) {
+                let { ...lesson } = this.lessons[id]
+                this.lessons[id].spaces--
+                lesson.spaces = 1
+                this.slessons.push(lesson)
+            }
+        }
+    },
+    computed: {
+        sortedLessons() {
+            if (this.lessons.length < 1) return this.lessons;
+
+            let sortBy = this.sortBy ?? "subject";
+            let ord = "desc";
+
+            let slessons = this.lessons;
+            slessons.sort(function (a, b) {
+                let aa = ord === "asc" ? a : b;
+                let bb = ord === "asc" ? b : a;
+                if (typeof aa[sortBy] === "number") {
+                    return (aa[sortBy] - bb[sortBy]);
+                } else {
+                    return ((aa[sortBy] < bb[sortBy]) ? -1 : ((aa[sortBy] > bb[sortBy]) ? 1 : 0));
+                }
+                return aa.price - bb.price;
+            });
+            return slessons;
+        },
+    },
 };
 
 </script>
 
 <style>
+.lesson-card {
+    width: clamp(10rem, fit-content, 15rem);
+    border-radius: 1rem;
+}
 
+.add-to-card {
+    width: fit-content;
+    background-color: #5590ed;
+    border-color: #5590ed;
+    border-radius: 2px;
+    color: white;
+    padding: 0 1rem;
+}
 </style>
