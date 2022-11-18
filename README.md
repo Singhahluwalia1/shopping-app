@@ -9,4 +9,4 @@ github repository url
 [www.github.com/Singhahluwalia1/shopping-app/](github.com/Singhahluwalia1/shopping-app/)
 
 Github pages preview
-[Singhahluwalia1.github.io/shopping-app/](Singhahluwalia1.github.io/shopping-app/)
+[Singhahluwalia1.github.io/shopping-app/dist/](Singhahluwalia1.github.io/shopping-app/dist/)
