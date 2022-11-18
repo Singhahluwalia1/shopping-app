@@ -33,10 +33,89 @@
             </div>
         </div>
         <div class="col">
-         </div>
+            <div class="lesson-list d-flex flex-wrap">
+                <div v-for="(lesson, index) of sortedLessons" :key="lesson.id" class="lesson-card col m-3 p-3 border">
+                    <div class="row">
+                        <div class="col">
+                            <div>
+                                <span>Subject: </span>
+                                <span>{{ lesson.subject }}</span>
+                            </div>
+                            <div>
+                                <span>Location:</span>
+                                <span>{{ lesson.location }}</span>
+                            </div>
+                            <div>
+                                <span>Price:</span>
+                                <span>£{{ lesson.price }}</span>
+                            </div>
+                            <div>
+                                <span>Spaces:</span>
+                                <span>{{ lesson.spaces }}</span>
+                            </div>
+                        </div>
+
+                        <div class="col"></div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-2">
+                        <button class="btn add-to-card" @click="add(index)">Add to card</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-  
+    <div class="row m-2">
+        <h2 class="text-center m-3">Shopping Cart</h2>
+        <div class="col">
+            <div class="lesson-list d-flex flex-wrap">
+                <div v-for="(lesson, index) of slessons" :key="lesson.id" class="lesson-card col m-3 p-3 border">
+                    <div class="row">
+                        <div class="col">
+                            <div>
+                                <span>Subject:</span>
+                                <span>{{ lesson.subject }}</span>
+                            </div>
+                            <div>
+                                <span>Location:</span>
+                                <span>{{ lesson.location }}</span>
+                            </div>
+                            <div>
+                                <span>Price:</span>
+                                <span>£{{ lesson.price }}</span>
+                            </div>
+                            <div>
+                                <span>Spaces:</span>
+                                <span>{{ lesson.spaces }}</span>
+                            </div>
+                        </div>
+
+                        <div class="col"></div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-2">
+                        <button class="btn add-to-card" @click="">Add to card</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-2">
+        <h2 class="text-center">Checkout</h2>
+        <div class="d-flex justify-content-center">
+            Name:
+            <label class="form-text-label ms-2">
+                <input class="form-text-input" type="text" name="order" />
+            </label>
+            <label class="form-text-label ms-2">
+                Phone
+                <input class="form-text-input" type="text" name="order" />
+            </label>
+            <Button class="btn btn-primary ms-2">Checkout</Button>
+        </div>
+    </div>
 </template>
 
 <script>
